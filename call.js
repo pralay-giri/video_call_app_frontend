@@ -55,7 +55,7 @@ const mediaConstrain = {
         width: { min: 640, max: 1920 },
         height: { min: 480, max: 1080 },
     },
-    audio: true,
+    audio: { echoCancellation: true },
 };
 
 const fetchRoomId = () => {
