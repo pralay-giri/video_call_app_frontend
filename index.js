@@ -1,8 +1,13 @@
 const joinBtn = document.getElementsByClassName("join-btn")[0];
 const inputField = document.getElementById("roomId");
 const createBtn = document.querySelector(".create-btn");
+const shearSection = document.querySelector(".shear-section");
+const link = document.querySelector(".link");
+const linkText = document.querySelector(".link-text");
+const copyBtn = document.querySelector(".copy-btn");
+let shearLink, uid;
 
-const randomUID = (uidLength = 10) => {
+const randomUID = (uidLength = 15) => {
     const chars = "zxcvbnmasdfghjklqwertyuiop1234567890";
     let uid = "";
     for (let i = 0; i < uidLength; i++) {
@@ -23,6 +28,16 @@ joinBtn.addEventListener("click", (e) => {
 });
 
 createBtn.addEventListener("click", () => {
-    const uid = randomUID();
-    redirect("/callpage.html?roomId=" + uid);
+    uid = randomUID();
+    inputField.value = uid;
+    const origin = window.location.origin;
+    shearLink = origin + "/callpage.html?roomId=" + uid;
+    shearSection.style.display = "flex";
+    link.href = shearLink;
+    linkText.innerHTML = uid;
+});
+
+copyBtn.addEventListener("click", () => {
+    if (!navigator.clipboard) return;
+    navigator.clipboard.writeText(uid);
 });

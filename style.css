@@ -69,7 +69,9 @@ body {
         }
     }
 
-    & .create-btn {
+    & .create-btn,
+    & .shear-section,
+    & .roomId {
         background-color: #7bd3ea;
         border: 1px solid white;
         outline: none;
@@ -86,6 +88,40 @@ body {
         &:hover {
             opacity: 0.8;
         }
+    }
+
+    & .shear-section {
+        display: none;
+        & a {
+            color: black;
+            text-decoration: none;
+            width: 100%;
+
+            & span {
+                color: rgb(9, 9, 153);
+                text-decoration: underline;
+            }
+        }
+
+        & button {
+            outline: none;
+            border: 1px solid;
+            border-radius: 10px;
+            cursor: pointer;
+
+            &:focus-visible,
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+
+        &:focus-visible,
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    .roomId {
     }
 }
 
