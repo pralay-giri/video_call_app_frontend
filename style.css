@@ -1,0 +1,177 @@
+*,
+html {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #070f2b;
+    color: white;
+}
+
+#join-section {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    & form {
+        width: 60vw;
+        margin: auto;
+        display: flex;
+
+        & .input-field {
+            width: 100%;
+            position: relative;
+
+            & label {
+                position: absolute;
+                padding: 0.5rem;
+                font-size: large;
+                pointer-events: none;
+                text-transform: lowercase;
+
+                &:has(+ input:valid, + input:focus-visible) {
+                    top: -20px;
+                    background-color: #070f2b;
+                    scale: 0.7;
+                }
+            }
+
+            & input {
+                background-color: transparent;
+                border: 1px solid white;
+                color: white;
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+                outline: none;
+                padding: 0.5rem;
+                width: 100%;
+                font-size: large;
+            }
+        }
+
+        & .join-btn {
+            background-color: #7bd3ea;
+            border: 1px solid white;
+            outline: none;
+            padding: 0.5rem;
+            font-size: large;
+            color: black;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            cursor: pointer;
+
+            &:focus-visible,
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+
+    & .create-btn {
+        background-color: #7bd3ea;
+        border: 1px solid white;
+        outline: none;
+        padding: 0.5rem;
+        font-size: large;
+        color: black;
+        cursor: pointer;
+        border-radius: 10px;
+        width: 60vw;
+        margin: auto;
+        display: flex;
+
+        &:focus-visible,
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}
+
+#confarenceSection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    & .video {
+        border: 1px solid;
+    }
+    & #user-1 {
+        position: absolute;
+        z-index: 999;
+        top: 1rem;
+        left: 1rem;
+        width: 300px;
+        aspect-ratio: 16/9;
+        border-radius: 10px;
+        background-color: black;
+        box-shadow: 1px 1px 10px #070f2b;
+    }
+
+    & #user-2 {
+        position: absolute;
+        background-color: black;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    & .btns {
+        position: absolute;
+        z-index: 1000;
+        bottom: 20px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+
+        & button {
+            width: 50px;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            border: none;
+            color: white;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 0.8;
+            }
+
+            & i {
+                font-size: 1.2rem;
+            }
+        }
+
+        & .close-btn {
+            background-color: red;
+        }
+        & .mute-btn {
+            background-color: darkcyan;
+        }
+
+        & .video-btn {
+            background-color: darkcyan;
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    #confarenceSection {
+        & #user-1 {
+            width: 200px;
+        }
+
+        & #user-2 {
+            object-position: center;
+        }
+    }
+}
+
+@media screen and (max-width: 425px) {
+    #confarenceSection {
+        & #user-1 {
+            width: 150px;
+        }
+    }
+}

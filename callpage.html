@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>video call application</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <section id="confarenceSection">
+            <video class="video" id="user-1" autoplay playsinline></video>
+            <video class="video" id="user-2" autoplay playsinline></video>
+            <div class="btns">
+                <button class="close-btn">
+                    <i class="fa-solid fa-phone"></i>
+                </button>
+                <button class="mute-btn">
+                    <i class="fa-solid fa-microphone-slash"></i>
+                </button>
+                <button class="video-btn">
+                    <i class="fa-solid fa-video-slash"></i>
+                </button>
+            </div>
+        </section>
+        <script
+            src="https://kit.fontawesome.com/c485021909.js"
+            async
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.js"
+            integrity="sha512-luMnTJZ7oEchNDZAtQhgjomP1eZefnl82ruTH/3Oj/Yu5qYtwL7+dVRccACS/Snp1lFXq188XFipHKYE75IaQQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+        <script src="call.js" defer></script>
+    </body>
+</html>

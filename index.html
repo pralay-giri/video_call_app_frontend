@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>video call application</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <section id="join-section">
+            <form>
+                <div class="input-field">
+                    <label for="roomId">Enter room ID</label>
+                    <input type="text" name="roomId" id="roomId" required />
+                </div>
+                <button class="join-btn">join</button>
+            </form>
+            <button class="create-btn">create room</button>
+        </section>
+        <script
+            src="https://kit.fontawesome.com/c485021909.js"
+            async
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.js"
+            integrity="sha512-luMnTJZ7oEchNDZAtQhgjomP1eZefnl82ruTH/3Oj/Yu5qYtwL7+dVRccACS/Snp1lFXq188XFipHKYE75IaQQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+        <script src="index.js" defer></script>
+    </body>
+</html>
