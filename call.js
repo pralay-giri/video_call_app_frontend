@@ -55,7 +55,7 @@ const mediaConstrain = {
         width: { min: 640, max: 1920 },
         height: { min: 480, max: 1080 },
     },
-    audio: true,
+    audio: { echoCancellation: true },
 };
 
 const fetchRoomId = () => {
@@ -68,14 +68,16 @@ const fetchRoomId = () => {
 
 roomID = fetchRoomId();
 
+// local stream create room
 socket.emit("create-room", roomID);
+
+// local stream get the camera access and set the tracks to remote user to view local video and audio
 socket.on("room:created", async ({ roomId }) => {
     roomID = roomId;
     localStream = await navigator.mediaDevices.getUserMedia(mediaConstrain);
-
     localVideo.srcObject = localStream;
-    // audio video
 
+    // setting the audio video tracks
     localPeerConnection.peer.addTrack(localStream.getTracks()[0], localStream);
     localPeerConnection.peer.addTrack(localStream.getTracks()[1], localStream);
 });
