@@ -48,7 +48,7 @@ isVideoShow = false;
 
 let localPeerConnection = new PEER();
 let remotePeerConnection = new PEER();
-const socket = io("http://localhost:8000");
+const socket = io("https://video-call-app-backend-66bx.onrender.com");
 
 const mediaConstrain = {
     video: {
