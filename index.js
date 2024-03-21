@@ -39,5 +39,6 @@ createBtn.addEventListener("click", () => {
 
 copyBtn.addEventListener("click", () => {
     if (!navigator.clipboard) return;
-    navigator.clipboard.writeText(uid);
+    const copyText = `Direct join link: ${shearLink} , or room id: ${uid}`;
+    navigator.clipboard.writeText(copyText);
 });
